@@ -1,0 +1,5 @@
+<botcomponent_workflowset>
+  <botcomponent_workflow botcomponentid.schemaname="cr8e9_PRIReportingHelpdesk.topic.Escalate" workflowid.workflowid="cbc24200-63c2-f111-aaaf-7ced8d3a78d0">
+    <iscustomizable>1</iscustomizable>
+  </botcomponent_workflow>
+</botcomponent_workflowset>

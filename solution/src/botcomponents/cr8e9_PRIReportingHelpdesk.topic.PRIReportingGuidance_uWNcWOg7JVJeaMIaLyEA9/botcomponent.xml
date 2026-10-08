@@ -1,0 +1,11 @@
+<botcomponent schemaname="cr8e9_PRIReportingHelpdesk.topic.PRIReportingGuidance_uWNcWOg7JVJeaMIaLyEA9">
+  <componenttype>16</componenttype>
+  <description>This knowledge source provides information found in PRI Reporting Guidance SharePoint.</description>
+  <iscustomizable>0</iscustomizable>
+  <name>PRI Reporting Guidance</name>
+  <parentbotid>
+    <schemaname>cr8e9_PRIReportingHelpdesk</schemaname>
+  </parentbotid>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+</botcomponent>

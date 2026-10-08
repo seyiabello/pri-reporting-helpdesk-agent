@@ -1,0 +1,4 @@
+kind: KnowledgeSourceConfiguration
+source:
+  kind: SharePointSearchSource
+  site: https://<your-tenant>.sharepoint.com/sites/PRIReportingHelpdesk/Shared%20Documents/PRI%20Reporting%20Guidance

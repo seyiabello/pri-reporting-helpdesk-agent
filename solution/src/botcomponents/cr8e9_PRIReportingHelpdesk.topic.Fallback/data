@@ -1,0 +1,54 @@
+kind: AdaptiveDialog
+beginDialog:
+  kind: OnUnknownIntent
+  id: main
+  actions:
+    - kind: ConditionGroup
+      id: conditionGroup_LktzXw
+      conditions:
+        - id: conditionItem_tlGIVo
+          condition: =System.FallbackCount < 3
+          actions:
+            - kind: SendActivity
+              id: sendMessage_QZreqo
+              activity: I couldn't find that in PRI's published guidance.
+
+            - kind: Question
+              id: question_1sSJx3
+              interruptionPolicy:
+                allowInterruption: true
+
+              variable: init:Topic.Var1
+              prompt: Would you like me to pass it to the reporting team?
+              entity:
+                kind: EmbeddedEntity
+                definition:
+                  kind: ClosedListEntity
+                  items:
+                    - id: Yes
+                      displayName: Yes
+
+                    - id: No
+                      displayName: No
+
+            - kind: ConditionGroup
+              id: conditionGroup_hWZJ1z
+              conditions:
+                - id: conditionItem_SxppJ0
+                  condition: =Topic.Var1 = 'cr8e9_PRIReportingHelpdesk.topic.Fallback.main.question_1sSJx3'.Yes
+                  actions:
+                    - kind: BeginDialog
+                      id: mnm4PW
+                      dialog: cr8e9_PRIReportingHelpdesk.topic.Escalate
+
+                - id: conditionItem_0eIj4f
+                  condition: =Topic.Var1 = 'cr8e9_PRIReportingHelpdesk.topic.Fallback.main.question_1sSJx3'.No
+                  actions:
+                    - kind: SendActivity
+                      id: sendActivity_w4mLkA
+                      activity: No problem. Is there anything else I can help with?
+
+      elseActions:
+        - kind: BeginDialog
+          id: 5aXj5M
+          dialog: cr8e9_PRIReportingHelpdesk.topic.Escalate
